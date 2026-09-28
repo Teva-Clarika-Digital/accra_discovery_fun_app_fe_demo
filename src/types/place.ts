@@ -132,9 +132,9 @@ export type Region = (typeof REGIONS)[number];
 export type PriceTier = 0 | 1 | 2 | 3;
 export const PRICE_LABEL: Record<PriceTier, string> = {
   0: "Free",
-  1: "$",
-  2: "$$",
-  3: "$$$",
+  1: "₵",
+  2: "₵₵",
+  3: "₵₵₵",
 };
 
 /**

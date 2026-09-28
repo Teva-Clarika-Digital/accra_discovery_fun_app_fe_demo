@@ -13,11 +13,12 @@ export const SITE_DESCRIPTION =
 export const SITE_SHORT = "Accra, timed right.";
 
 /**
- * `NEXT_PUBLIC_SITE_URL` is the deployed origin. The fallback is localhost so
- * `next build` and local `next start` never emit production URLs by accident.
+ * `NEXT_PUBLIC_SITE_URL` is the deployed origin. An empty or whitespace value is treated
+ * the same as unset (Vercel commonly exposes an empty variable), and the fallback is
+ * localhost so `next build` and local `next start` never emit production URLs by accident.
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "http://localhost:3000"
 ).replace(/\/+$/, "");
 
 export const NAV_LINKS = [

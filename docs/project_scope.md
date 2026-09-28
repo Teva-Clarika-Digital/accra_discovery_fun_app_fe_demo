@@ -177,7 +177,7 @@ type Place = {
   address?: string;
   lat: number;
   lng: number;
-  priceTier: 0 | 1 | 2 | 3;   // free / $ / $$ / $$$
+  priceTier: 0 | 1 | 2 | 3;   // free / ₵ / ₵₵ / ₵₵₵ (Ghanaian Cedis)
   driveMinutes: number;       // from Accra reference point (5.6037, -0.1870)
   vibe: Vibe[];               // chill | culture | adventure | nightlife | scenic | romantic | party
   energy: 1 | 2 | 3 | 4 | 5;  // how hard it hits
