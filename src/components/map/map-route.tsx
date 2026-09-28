@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import type { Place } from "@/types/place";
 import type { TimeContext } from "@/lib/best-time";
 import { useMapState, useVisiblePlaces } from "../use-map-state";
@@ -68,42 +67,20 @@ export function MapRoute({
         ctx={ctx}
         focusToken={focusToken}
         toolbar={
-          <div>
-            <header className="no-print pointer-events-none flex items-start gap-2">
-              <div className="pointer-events-auto flex items-center gap-2">
-                {backHref && (
-                  <Link
-                    href={backHref}
-                    aria-label="Back"
-                    className="grid size-9 place-items-center rounded-full border border-line bg-canvas text-[14px] text-ink shadow-sm hover:bg-mist"
-                  >
-                    ←
-                  </Link>
-                )}
-                <div className="rounded-full border border-line bg-canvas/95 px-3.5 py-2 shadow-sm">
-                  <h1 className="text-[14px] font-semibold leading-tight text-ink">
-                    {title}
-                  </h1>
-                  {subtitle && (
-                    <p className="text-[11px] leading-tight text-ink-3">{subtitle}</p>
-                  )}
-                </div>
-              </div>
-            </header>
-            <MapToolbar
-              state={state}
-              onPatchFilters={patchFilters}
-              onPatch={patch}
-              onOpenFilters={() => setShowFilters(true)}
-              savedOnly={savedOnly}
-              onToggleSaved={() => setSavedOnly((v) => !v)}
-              resultCount={places.length}
-              totalCount={source.length}
-              sharePath={
-                collectionId ? `/c/${collectionId}` : "/m"
-              }
-            />
-          </div>
+          <MapToolbar
+            state={state}
+            onPatchFilters={patchFilters}
+            onPatch={patch}
+            onOpenFilters={() => setShowFilters(true)}
+            savedOnly={savedOnly}
+            onToggleSaved={() => setSavedOnly((v) => !v)}
+            resultCount={places.length}
+            totalCount={source.length}
+            sharePath={collectionId ? `/c/${collectionId}` : "/m"}
+            backHref={backHref}
+            title={title}
+            subtitle={subtitle}
+          />
         }
       />
 

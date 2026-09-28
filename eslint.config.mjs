@@ -22,6 +22,8 @@ export default tseslint.config(
       "playwright-report/**",
       "test-results/**",
       "next-env.d.ts",
+      "public/maplibre-gl-worker.mjs",
+      "public/maplibre-gl-shared.mjs",
     ],
   },
 

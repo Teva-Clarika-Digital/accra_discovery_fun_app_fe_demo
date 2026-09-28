@@ -9,6 +9,11 @@ import type { TimeContext } from "@/lib/best-time";
 import { Button, Pill } from "../ui";
 import { PlacePreviewSheet } from "./place-preview-sheet";
 
+// MapLibre v6 derives its worker path from `import.meta.url`, which a bundler replaces
+// with a non-http URL — so the worker fails to load and the map never renders. The
+// packaged worker + its shared chunk are served from /public instead.
+maplibregl.setWorkerUrl("/maplibre-gl-worker.mjs");
+
 /**
  * The interactive map.
  *

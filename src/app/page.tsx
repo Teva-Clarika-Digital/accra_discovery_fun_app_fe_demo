@@ -5,7 +5,6 @@ import { Pill } from "@/components/ui";
 import { COLLECTIONS } from "@/data/collections";
 import { PLACES, RECOMMENDABLE } from "@/data";
 import { contextFrom, countOpenNow } from "@/lib/best-time";
-import { SITE_TAGLINE } from "@/lib/site";
 import { formatClock } from "@/lib/utils";
 
 export const revalidate = 60;
@@ -30,12 +29,10 @@ export default function HomePage() {
           {formatClock(now.getHours() * 60 + now.getMinutes())} in Accra
         </p>
         <h1 className="text-balance text-[30px] font-semibold leading-[1.1] tracking-tight text-ink sm:text-[38px]">
-          {SITE_TAGLINE}
+          Esther&rsquo;s Hangout
         </h1>
         <p className="mt-3 max-w-prose text-[14px] leading-relaxed text-ink-2">
-          {PLACES.length} places within a few hours of central Accra, each with
-          drive time, opening hours and the window it is actually worth
-          visiting.
+          {PLACES.length} locations and counting!
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <Pill tone={openCount > 0 ? "live" : "neutral"}>
